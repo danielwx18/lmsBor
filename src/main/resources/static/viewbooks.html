@@ -1,0 +1,45 @@
+<div ng-controller="borrowerController">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+	</div>
+	<div class="container marketing">
+		<h1>List of Books of this branch in LMS</h1>
+		<div class="col-md-10">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href=""
+					ng-click="pagination.prevPage()">&laquo;</a></li>
+				<li class="page-item"
+					ng-repeat="n in [] | range: pagination.numPages"
+					ng-class="{active: n == pagination.page}"><a class="page-link"
+					href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a></li>
+				<li class="page-item"><a class="page-link" href=""
+					ng-click="pagination.nextPage()">&raquo;</a></li>
+			</ul>
+		</div>
+		
+		
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Title</th>
+								<th scope="col">Borrow</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="b in theBooks | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+								<td>{{$index+1}}</td>
+								<td>{{b.title}}</td>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm"
+									ng-click="updateLoans(b)">Check Out</button>
+								</td>					
+							</tr>
+						</tbody>
+					</table>
+		<form>
+			<a class="btn btn-danger" href="#/borrower" role="button">Go
+				Back</a>
+		</form>
+	</div>
+</div>

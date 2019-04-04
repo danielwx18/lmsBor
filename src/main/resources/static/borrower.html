@@ -1,0 +1,38 @@
+<div ng-controller="borrowerController">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+</div>
+<div class="container marketing">
+
+	<!-- Three columns of text below the carousel -->
+	<div class="row">
+		<div class="col-lg-4">
+		</div>
+		<div class="col-lg-4">
+			<h2 style="color:#DD7251;">Welcome to borrower's management</h2>
+					<img src="template_files/sf1.png" style="width:150px;height:150px;">
+			<h2 style="color:#808000;">Services we provide</h2>
+			<p style="color:#808000;">As a borrower, after you enter a valid card number, you can either check out a book or return a book.</p>
+			<p>
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Enter your card no.: </label> <input type="text" class="form-control"
+							placeholder="Enter your card no." ng-model="CardNo" value="CardNo">
+					</div>
+			
+					<button type="submit" class="btn btn-primary btn-sm" ng-click="checkCardNo(CardNo)">Submit</button>
+					<button type="button" class="btn btn-danger btn-sm" ng-click="cancel()">Cancel</button>
+				</form>
+			</p>
+			<p>
+				<a class="btn btn-danger" href="http://localhost:8080/lms/#/home" role="button">Go Back</a>
+			</p>
+		</div>
+		<!-- /.col-lg-4 -->
+
+	</div>
+	<!-- /.row -->
+
+</div>
+</div>
+
